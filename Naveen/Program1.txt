@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileHandling
+namespace Problem1
 {
     class Program
     {
@@ -42,14 +42,25 @@ namespace FileHandling
             Array.Sort(input_1);
             Console.Write("\nEnter Random Number : ");
             int input_2 = Convert.ToInt32(Console.ReadLine());
-            
-            while (isFound(input_1,input_2))
+            int x = input_2;
+            int count = 0;
+            while (isFound(input_1,x) && count <10)
             {
-                input_2 = input_2 - 1;
+                x = x - 1;
+                count++;
+                //input_2 = input_2 - 1;
+            }
+            x = input_2;
+            count = 0;
+            while (isFound(input_1, x) && count<10)
+            {
+                x = x + 1;
+                count++;
+                //input_2 = input_2 - 1;
             }
             // (I1) 5 -> 1, 2, 3, 4, 5
             // (I2) try 8 and also try 9
             Console.Read();
         }
-    }   
+    }
 }
