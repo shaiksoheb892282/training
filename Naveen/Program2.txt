@@ -1,0 +1,25 @@
+using System;
+namespace FileHandling
+{
+ /*
+Write a program to convert a string from camel case to snake case.
+Throw error if the string is not in camel case format.
+Today Is A Good Day.
+today_is_a_good_day .
+*/
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("CAMEL Case to SNAKE case");
+            Console.Write("Enter Any Sentence : ");
+            string sentence1 = Console.ReadLine();
+            
+            sentence1 = sentence1.ToLower();
+            sentence1 = sentence1.Replace(" ","_");
+
+            Console.WriteLine(sentence1);
+            Console.ReadLine();
+        }
+    }
+}
