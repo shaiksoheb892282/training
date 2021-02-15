@@ -9,6 +9,23 @@ order by a.lastname
 ;
 go
 
+alter trigger trg_productsdelete
+on products for delete
+as
+begin
+	declare @prodid int
+	set @prodid=(select productid from deleted)
+	
+		print 'Cannot delete from products...only the discontinued status can be changed'
+		rollback transaction
+		print 'Updating products table with discontinued status = 1'
+		begin transaction tranupdateproducts
+			update products
+			set discontinued=1 from products p 
+			where p.ProductID=@prodid
+		commit transaction tranupdateproducts
+end
+
 class Program
     {
         static void Main(string[] args)
