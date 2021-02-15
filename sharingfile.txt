@@ -1,0 +1,58 @@
+select concat(a.lastname," works for ",b.lastname) as Hierarchy from
+(select e.lastname,e.empno,e.job,d.mgrno from employee e
+join department d on e.workdept=d.deptno) as a join
+(select e.lastname,e.empno,e.job,d.mgrno from employee e join
+department d on e.workdept=d.deptno) as b
+on a.mgrno=b.empno
+where a.mgrno!=a.empno
+order by a.lastname
+;
+go
+
+class Program
+    {
+        static void Main(string[] args)
+        {
+            //CreateFile();
+            MySqlExample();
+
+            Console.ReadKey();
+        }
+
+        public static void MySqlExample()
+        {
+            string con = ConfigurationManager.ConnectionStrings["myRoot"].ConnectionString;
+            using (MySqlConnection mySqlcon = new MySqlConnection(con))
+            {
+
+                //Console.WriteLine(mySqlcon.State);
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    cmd.Connection = mySqlcon;
+                    cmd.CommandText = "show tables;";
+                    mySqlcon.Open();
+                    MySqlDataReader mySqlDataReader = cmd.ExecuteReader();
+                    Console.WriteLine("Select corresponding number to show table details correspondingly");
+                    int count = 0;
+                    ArrayList a = new ArrayList();
+
+                    while (mySqlDataReader.Read())
+                    {
+                        Console.Write(++count);
+                        Console.WriteLine($"\t{mySqlDataReader[0]}");//\t{mySqlDataReader[1]}\t{mySqlDataReader[2]} {mySqlDataReader[3]}\t{mySqlDataReader[4]}");
+                        a.Add(mySqlDataReader[0]);
+                    }
+                    Console.ReadKey();
+                    //mySqlDataReader.Close();
+                    //count = Convert.ToInt32(Console.ReadLine());
+                    //cmd.CommandText = "Select * from "+a[count-1]+";";
+                    //mySqlDataReader = cmd.ExecuteReader();
+                    ////Console.WriteLine(mySqlDataReader.FieldCount);
+                    //while (mySqlDataReader.Read())
+                    //{                        
+                    //    Console.WriteLine($"\t{mySqlDataReader[0]}");//\t{mySqlDataReader[1]}\t{mySqlDataReader[2]} {mySqlDataReader[3]}\t{mySqlDataReader[4]}");
+                    //}
+                }
+            }
+        }
+}
