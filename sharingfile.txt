@@ -9,6 +9,10 @@ order by a.lastname
 ;
 go
 
+
+https://cognizant.webex.com/webappng/sites/cognizant/meeting/info/060f9119c71b6b2a19365f3c008bb908?siteurl=cognizant&MTID=m3bf344221712461aaa1bebcd88d09229&meetingAuthToken=QUhTSwAAAATl%2FsCVD%2FqMQYtNYu8d7MesENww3dkx%2Bxvpk6RVqtT91dOrfXUc8EewedcxOHj5w4MbTDForXTG2b0Wd4xX9aNmeK550oW6h7EkLQRFHDTfCxc2stDzhJ8xdLUJePoqAktyr%2FMaQycmY0u3m9pNApuru2Y5nOpXaplmh2IjWt2sXT96RiZnIfG26%2BHcvaappD673UdUm%2BwDePy6FyEy%2FHGwhmUS6kP%2BuUdTWLalQl6TFg%3D%3D
+
+
 alter trigger trg_productsdelete
 on products for delete
 as
