@@ -17,6 +17,44 @@ https://cognizant.webex.com/webappng/sites/cognizant/meeting/info/060f9119c71b6b
 https://cognizant.webex.com/cognizant/j.php?MTID=ma4ed2dfb4ba870bd8e7204b4d4fc27cf
 
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace ASP_MVC_Example.Controllers
+{
+    public class CustomController : Controller
+    {
+        static NorthwindEntities db = new NorthwindEntities();
+        // GET: custom
+        public ActionResult Index()
+        {
+
+            return View();
+        }
+        public ActionResult DisplayCatagories()
+        {
+            var result = db.Categories.ToList();
+
+            return View(result);
+        }
+        public ActionResult Create()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Category obj)
+        {
+            db.Categories.Add(obj);
+            db.SaveChanges();
+            return View();
+        }
+    }
+}
+
 alter trigger trg_productsdelete
 on products for delete
 as
