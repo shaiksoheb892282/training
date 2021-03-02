@@ -12,9 +12,28 @@ go
 https://cognizanttraining.webex.com/cognizanttraining/j.php?MTID=me8a76c9ef435539f95c76851805d3c67
 
 
-https://cognizant.webex.com/webappng/sites/cognizant/meeting/info/060f9119c71b6b2a19365f3c008bb908?siteurl=cognizant&MTID=m3bf344221712461aaa1bebcd88d09229&meetingAuthToken=QUhTSwAAAATl%2FsCVD%2FqMQYtNYu8d7MesENww3dkx%2Bxvpk6RVqtT91dOrfXUc8EewedcxOHj5w4MbTDForXTG2b0Wd4xX9aNmeK550oW6h7EkLQRFHDTfCxc2stDzhJ8xdLUJePoqAktyr%2FMaQycmY0u3m9pNApuru2Y5nOpXaplmh2IjWt2sXT96RiZnIfG26%2BHcvaappD673UdUm%2BwDePy6FyEy%2FHGwhmUS6kP%2BuUdTWLalQl6TFg%3D%3D
 
 https://cognizant.webex.com/cognizant/j.php?MTID=ma4ed2dfb4ba870bd8e7204b4d4fc27cf
+
+
+@if(Session["username"]!=null)
+{
+<ul class="nav navbar-nav navbar-right">
+    <li>
+        @Html.ActionLink("Hello...Welcome User " + @Session["username"] + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+    </li>
+    @*<li><a href="javascript:document.getElementById('logoutForm').submit()">Log off...Bye</a></li>*@
+    <li>@Html.ActionLink("Log Off", "Logoff","Login")</li>
+</ul>
+    
+}
+else
+{
+<ul class="nav navbar-nav navbar-right">
+    <li>@Html.ActionLink("Register", "Register", "Login", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("Log in", "MyLogin", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+</ul>
+}
 
 @model IEnumerable<ASP_MVC_Example.Category>
 
