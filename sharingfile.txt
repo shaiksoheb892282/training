@@ -9,17 +9,9 @@ order by a.lastname
 ;
 go
 
-https://join.skype.com/XnOCEf5Qiq6R
-
-https://COGNIZANTLEARNING.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2fmanagement%2fLMS_ActDetails.aspx%3fActivityId%3d1627764%26UserMode%3d0
-
-https://cognizanttraining.webex.com/cognizanttraining/j.php?MTID=me8a76c9ef435539f95c76851805d3c67
+vishava sai college, vanamtopu muthukurugate
 
 
-https://cognizant.webex.com/cognizant/j.php?MTID=mca786eef79f6e1c7710b41be3437c109
-
-
-https://cognizant.webex.com/cognizant/j.php?MTID=ma4ed2dfb4ba870bd8e7204b4d4fc27cf
 
 
 @if(Session["username"]!=null)
